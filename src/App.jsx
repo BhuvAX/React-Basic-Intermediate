@@ -1,62 +1,28 @@
-import React from "react"
-import TodoList from "./TodoList"
-import Name from "./Name"
-import TodoListClass from "./TodoListClass"
-import NameClass from "./NameClass"
-import TodoListItem from "./TodoListItem"
+import "./assets/user.css";
+import userDetails from "./assets/user.json";
+import UserCard from "./UserCard";
+import UserCardClass from "./UserCardClass";
 
 function App() {
-  // Example of using JSX syntax as shown in the course video.
-  /* return (
-    <div className="large" id="largeDiv">
-      <label htmlFor="name">Number </label>
-      <input id="inputId" type="number" defaultValue={3} />
-    </div>
-  ) */
-  // Exercise for using JSX syntax
-  /* return (
-    <div className="large" id="largeDiv">
-      <label htmlFor="name">Number </label>
-      <input id="inputId" type="number" defaultValue={3} />
-    </div>
-  ) */
-  // Example of rendering and creating custom function components as shown in the course video.
-  /* return (
-    <div>
-      <h1>Todo List</h1>
-      <TodoList />
-    </div>
-  ) */
-  // Exercise for rendering and creating custom function components
-  /* return (
-    <div>
-      <Name />
-    </div>
-  ) */
-  // Example of rendering and creating custom class components as shown in the course video.
-  /* return (
-    <div>
-      <h1>Todo List</h1>
-      <TodoListClass />
-    </div>
-  ) */
-  // Exercise for rendering and creating custom class components
-  /* return <NameClass /> */
-  // Example of using props in components as shown in the course video.
-  /* return (
-    <div>
-      <Name isProgrammer>
-        <span>Custom Name</span>
-      </Name>
-    </div>
-  ) */
-  // Exercise for using props in components.
   return (
     <div>
-      <TodoListItem isComplete>Item 1</TodoListItem>
-      <TodoListItem>Item 2</TodoListItem>
+      <h1>Function Component</h1>
+      <UserCard
+        name={userDetails.name}
+        phoneNumber={userDetails.phoneNumber}
+        age={userDetails.age}
+        address={userDetails.address}
+      />
+      <br />
+      <h1>Class Component</h1>
+      <UserCardClass
+        name={userDetails.name}
+        phoneNumber={userDetails.phoneNumber}
+        age={userDetails.age}
+        address={userDetails.address}
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
