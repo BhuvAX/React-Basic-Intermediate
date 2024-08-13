@@ -1,11 +1,9 @@
-import { ArrayState } from "./layoutComponents/ArrayState";
+import { ClassComponent } from "./ClassComponent";
+import { FunctionComponent } from "./FunctionComponent";
 
 function App() {
-  return (
-    <>
-      <ArrayState />
-    </>
-  );
+  return <FunctionComponent />;
+  //return <ClassComponent />
 }
 
 export default App;
