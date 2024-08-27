@@ -1,63 +1,35 @@
-import { useState } from "react";
-import "./assets/styles.css";
-import { ListItem } from "./ListItem";
+import { useArray } from "./useArray";
+
+// const INITIAL_ARRAY = () => [1, 2, 3]
+const INITIAL_ARRAY = [1, 2, 3];
 
 function App() {
-  const [items, setItems] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-
-  const addItem = () => {
-    if (inputValue === "") return;
-
-    setItems((currentItems) => {
-      return [
-        ...currentItems,
-        { name: inputValue, completed: false, id: crypto.randomUUID() },
-      ];
-    });
-    setInputValue("");
-  };
-
-  function toggleTodo(itemId, completed) {
-    setItems((currentItems) => {
-      return currentItems.map((item) => {
-        if (item.id === itemId) return { ...item, completed: completed };
-
-        return item;
-      });
-    });
-  }
-
-  function deleteTodo(itemId) {
-    setItems((currentItems) => {
-      return currentItems.filter((item) => item.id !== itemId);
-    });
-  }
+  const { array, set, push, replace, filter, remove, clear, reset } =
+    useArray(INITIAL_ARRAY);
 
   return (
     <>
-      <ul id="list">
-        {items.map((item) => {
-          return (
-            <ListItem
-              key={item.id}
-              {...item}
-              toggleTodo={toggleTodo}
-              deleteTodo={deleteTodo}
-            />
-          );
-        })}
-      </ul>
-
-      <div id="new-todo-form">
-        <label htmlFor="todo-input">New Todo</label>
-        <input
-          type="text"
-          id="todo-input"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <button onClick={addItem}>Add Todo</button>
+      <div>{array.join(", ")}</div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: ".5rem",
+          alignItems: "flex-start",
+          marginTop: "1rem",
+        }}
+      >
+        <button onClick={() => set([4, 5, 6])}>Set to [4, 5, 6]</button>
+        <button onClick={() => push(4)}>Push 4</button>
+        <button onClick={() => replace(1, 9)}>
+          Replace the second element with 9
+        </button>
+        <button onClick={() => filter((n) => n < 3)}>
+          Keep numbers less than 3
+        </button>
+        <button onClick={() => remove(1)}>Remove second element</button>
+        <button onClick={clear}>Clear</button>
+        <button onClick={reset}>Reset</button>
       </div>
     </>
   );
