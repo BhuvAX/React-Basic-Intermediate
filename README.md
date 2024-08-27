@@ -1,21 +1,7 @@
 # Advanced Components
 
-## Topics covered in this section of course
+## Simple Todo List Project
 
-1. Advanced components
+Attached screenshot for reference
 
-- React Dev Tools
-- Conditional Rendering
-- Rendering Lists
-- Fragments
-- Spread Props
-- Render Raw HTML
-
-2. Basic Hooks
-
-- Hook Rules
-- useRef Hook
-- Refs in class components
-- useMemo Hook
-- useCallback Hook
-- Custom Hooks
+![Attached screenshot for reference]()
