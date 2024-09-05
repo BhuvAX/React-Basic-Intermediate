@@ -1,16 +1,22 @@
-# React Basic and Intermediate
+# Routing
 
-This repo contains the exercises and projects implementation from the [react simplified basic and intermediate course](https://courses.webdevsimplified.com/)
-This template provides a minimal setup to get React working with Vite.
+## Topics covered in this section of course
 
-## Branch Structure
+1. Routing without a library
+2. React router basics
+3. Nested routes
+4. Dynamic routes
+5. Loaders
 
-1. The main branch contains the skeleton code of vite react app.
-2. For each section of the course, there are distinct branches for exercises and project implementation.
+# API Information
 
-## Local Setup Instructions
+The API has the following endpoints:
 
-1. To run this project implementation on your local we can clone the repo.
-2. Open the terminal and navigate to the root folder of project.
-3. Execute the command `npm install` and after that execute `npm run dev` command.
-4. Open the localhost url returned in the browser to view the project URL will look like: http://localhost:5173/
+- `GET /posts` - Returns all of the posts
+- `GET /posts/:id` - Returns a single post
+- `GET /posts/:id/comments` - Returns all of the comments for a single post
+- `GET /users` - Returns all of the users
+- `GET /users/:id` - Returns a single user
+- `GET /posts?userId=<userId>` - Returns all of the posts for a single user
+- `GET /todos` - Returns all of the todos
+- `GET /todos?userId=<userId>` - Returns all of the todos for a single user
